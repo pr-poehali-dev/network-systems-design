@@ -6,6 +6,7 @@ import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
+import NetworkPacketVisualization from '@/components/NetworkPacketVisualization';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('courses');
@@ -159,48 +160,7 @@ const Index = () => {
             </div>
             <div className="relative animate-fade-in">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl" />
-              <Card className="relative border-2">
-                <CardContent className="p-8">
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4 p-4 bg-primary/10 rounded-lg">
-                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                        <Icon name="Server" className="text-primary-foreground" size={24} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium">Сервер</div>
-                        <div className="text-xs text-muted-foreground">192.168.1.1</div>
-                      </div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow" />
-                    </div>
-                    <div className="flex justify-center">
-                      <div className="w-px h-8 bg-border" />
-                    </div>
-                    <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-lg">
-                      <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                        <Icon name="Router" className="text-accent-foreground" size={24} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium">Маршрутизатор</div>
-                        <div className="text-xs text-muted-foreground">Gateway</div>
-                      </div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow" />
-                    </div>
-                    <div className="flex justify-center">
-                      <div className="w-px h-8 bg-border" />
-                    </div>
-                    <div className="flex items-center gap-4 p-4 bg-secondary/10 rounded-lg">
-                      <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                        <Icon name="Monitor" className="text-secondary-foreground" size={24} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium">Клиент</div>
-                        <div className="text-xs text-muted-foreground">192.168.1.100</div>
-                      </div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <NetworkPacketVisualization />
             </div>
           </div>
         </div>
