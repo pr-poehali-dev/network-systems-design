@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
 import NetworkPacketVisualization from '@/components/NetworkPacketVisualization';
+import VideoLessonsSection from '@/components/VideoLessonsSection';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('courses');
@@ -174,10 +175,14 @@ const Index = () => {
                 <h3 className="text-3xl font-bold mb-2">Ваше обучение</h3>
                 <p className="text-muted-foreground">Выберите раздел для продолжения</p>
               </div>
-              <TabsList className="grid w-auto grid-cols-4 gap-4">
+              <TabsList className="grid w-auto grid-cols-5 gap-4">
                 <TabsTrigger value="courses" className="gap-2">
                   <Icon name="BookOpen" size={18} />
                   Курсы
+                </TabsTrigger>
+                <TabsTrigger value="videos" className="gap-2">
+                  <Icon name="Video" size={18} />
+                  Видео
                 </TabsTrigger>
                 <TabsTrigger value="simulations" className="gap-2">
                   <Icon name="Cpu" size={18} />
@@ -234,6 +239,10 @@ const Index = () => {
                   </Card>
                 ))}
               </div>
+            </TabsContent>
+
+            <TabsContent value="videos" className="space-y-6">
+              <VideoLessonsSection />
             </TabsContent>
 
             <TabsContent value="simulations" className="space-y-6">
